@@ -386,11 +386,10 @@
             border-color:rgba(212,175,55,0.35); box-shadow:var(--shadow-gold);
             transform:translateY(-7px) scale(1.03);
         }
-        .prod-img { width:100%; height:100%; background:rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+        .prod-img { width:100%; height:100%; background:rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
         .prod-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease; }
         .prod-card:hover .prod-img img { transform:scale(1.1); }
-        .prod-img .ph { font-size:3.2rem; color:rgba(212,175,55,0.2); transition:var(--transition-smooth); }
-        .prod-card:hover .prod-img .ph { color:rgba(212,175,55,0.4); }
+        .prod-img .ph { font-size:3.2rem; color:rgba(212,175,55,0.2); transition:var(--transition-smooth); position:absolute; }
 
         /* ==================== CONTACT ==================== */
         .contact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.6rem; max-width:950px; margin:0 auto; }
@@ -473,7 +472,6 @@
             .prod-grid { grid-template-columns:repeat(2,1fr); gap:1rem; }
             .group-featured-box { padding:1.2rem 1.5rem; }
             .wide-image-wrapper img { max-height: 250px; }
-            .wide-image-wrapper .ph-wide { height: 180px; font-size: 3rem; }
         }
         @media(max-width:480px) {
             .hero-content h1 { font-size:1.9rem; }
@@ -482,7 +480,6 @@
             .glass-card { padding:2rem 1.2rem; }
             .brand { font-size:1.1rem; }
             .wide-image-wrapper img { max-height: 200px; }
-            .wide-image-wrapper .ph-wide { height: 140px; font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -503,7 +500,7 @@
             <div class="container header-inner">
                 <a href="#home" class="logo-wrap">
                     <div class="logo-img-wrap" id="logoPlaceholder">
-                        <img src="lo.jpeg" alt="شعار" onerror="this.style.display='none';this.parentElement.querySelector('.logo-fallback').style.display='block';">
+                        <img src="lo.jpeg" alt="شعار الولاء الطبي" onerror="this.style.display='none';this.parentElement.querySelector('.logo-fallback').style.display='block';">
                         <span class="logo-fallback" style="display:none;"><i class="fas fa-heartbeat"></i></span>
                     </div>
                     <div class="brand-block"><span class="brand">الولاء <span>الطبي</span></span><span class="brand-sub">GLOBAL</span></div>
@@ -543,24 +540,25 @@
             <div class="wide-image-section" data-aos="fade-up">
                 <div class="container">
                     <div class="wide-image-wrapper">
-                        <img src="j11.jpeg" alt="صورة عريضة" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'ph-wide\'><i class=\'fas fa-image\'></i></div>'">
-                    </div>
+                        <!-- [صورة j11.jpeg] تأكد من وجود الملف في نفس مجلد الموقع -->
+                       
                 </div>
             </div>
 
             <section class="section" id="products"><div class="container">
                 <div class="text-center" data-aos="fade-up"><span class="section-badge"><i class="fas fa-boxes"></i> منتجاتنا</span><h2 class="section-title">معرض <span style="color:var(--gold-deep);">المنتجات</span></h2><p class="section-desc">تشكيلة واسعة من المستلزمات الطبية ولوازم الأم والطفل عالية الجودة.</p></div>
                 <div class="prod-grid">
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="30"><div class="prod-img"><img src="j1.jpeg" alt="1" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="60"><div class="prod-img"><img src="j2.jpeg" alt="2" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="90"><div class="prod-img"><img src="j3.jpeg" alt="3" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="120"><div class="prod-img"><img src="j4.jpeg" alt="4" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="150"><div class="prod-img"><img src="j5.jpeg" alt="5" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="180"><div class="prod-img"><img src="j6.jpeg" alt="6" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="210"><div class="prod-img"><img src="j7.jpeg" alt="7" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="240"><div class="prod-img"><img src="j8.jpeg" alt="8" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="270"><div class="prod-img"><img src="j9.jpeg" alt="9" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
-                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="300"><div class="prod-img"><img src="j10.jpeg" alt="10" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\'></i>'"></div></div>
+                    <!-- [صور المنتجات j1.jpeg إلى j10.jpeg] تأكد من وجود الملفات في نفس مجلد الموقع -->
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="30"><div class="prod-img"><img src="j1.jpeg" alt="منتج 1" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="60"><div class="prod-img"><img src="j2.jpeg" alt="منتج 2" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="90"><div class="prod-img"><img src="j3.jpeg" alt="منتج 3" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="120"><div class="prod-img"><img src="j4.jpeg" alt="منتج 4" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="150"><div class="prod-img"><img src="j5.jpeg" alt="منتج 5" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="180"><div class="prod-img"><img src="j6.jpeg" alt="منتج 6" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="210"><div class="prod-img"><img src="j7.jpeg" alt="منتج 7" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="240"><div class="prod-img"><img src="j8.jpeg" alt="منتج 8" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="180"><div class="prod-img"><img src="j9.jpeg" alt="منتج 9" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
+                    <div class="prod-card" data-aos="zoom-in" data-aos-delay="180"><div class="prod-img"><img src="j10.jpeg" alt="منتج 10" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image ph\' style=\'position:absolute;\'></i>'"></div></div>
                 </div>
             </div></section>
 
@@ -570,15 +568,28 @@
                     <div class="contact-card" data-aos="flip-left" data-aos-delay="50"><div class="contact-icon"><i class="fas fa-user-tie"></i></div><h4>الإدارة</h4><p class="sub">للتواصل مع الإدارة</p><a href="https://wa.me/218917000047" target="_blank" class="contact-link">0917000047</a></div>
                     <div class="contact-card" data-aos="flip-left" data-aos-delay="100"><div class="contact-icon"><i class="fas fa-bullhorn"></i></div><h4>الصالة والإعلام</h4><p class="sub">للاستفسارات الإعلامية</p><a href="https://wa.me/218922992989" target="_blank" class="contact-link">0922992989</a></div>
                     <div class="contact-card" data-aos="flip-left" data-aos-delay="150"><div class="contact-icon"><i class="fas fa-store"></i></div><h4>المبيعات</h4><p class="sub">لطلبات الشراء</p><a href="tel:+218918828227" class="contact-link">0918828227</a></div>
-                    <div class="contact-card" data-aos="flip-left" data-aos-delay="200"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><h4>العنوان</h4><p class="sub">زليتن - شارع الجملة</p><p style="font-weight:600;color:var(--text-dark);margin-top:0.3rem;">قرب محطة وقود البازة</p></div>
+                    <div class="contact-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>موقعنا</h4>
+                        <p class="sub">اضغط للانتقال إلى الخريطة</p>
+                        <a href="https://maps.app.goo.gl/paZkNijJN7me1QHD8" target="_blank" class="contact-link" id="mapsLink">
+                            <i class="fas fa-location-dot"></i> زليتن - شارع الجملة
+                        </a>
+                        <p style="font-weight:600;color:var(--text-dark);margin-top:0.5rem;font-size:0.85rem;">قرب محطة وقود البازة</p>
+                    </div>
                 </div>
             </div></section>
         </main>
 
         <footer class="footer"><div class="container">
-            <div class="footer-logo"><div class="footer-logo-box"><img src="lo.jpeg" alt="شعار" onerror="this.style.display='none';"></div><span class="footer-brand">الولاء <span>الطبي</span> <small style="font-size:0.6rem;display:block;letter-spacing:2px;">GLOBAL</small></span></div>
+            <div class="footer-logo"><div class="footer-logo-box"><img src="lo.jpeg" alt="شعار الولاء الطبي" onerror="this.style.display='none';"></div><span class="footer-brand">الولاء <span>الطبي</span> <small style="font-size:0.6rem;display:block;letter-spacing:2px;">GLOBAL</small></span></div>
             <div class="footer-links"><a href="#home">الرئيسية</a><a href="#about">من نحن</a><a href="#products">منتجاتنا</a><a href="#contact">اتصل بنا</a></div>
-            <div class="footer-contact"><span><i class="fas fa-user-tie"></i> الإدارة: 0917000047</span><span><i class="fas fa-bullhorn"></i> الإعلام: 0922992989</span><span><i class="fas fa-store"></i> المبيعات: 0918828227</span></div>
+            <div class="footer-contact">
+                <span><i class="fas fa-user-tie"></i> الإدارة: 0917000047</span>
+                <span><i class="fas fa-bullhorn"></i> الإعلام: 0922992989</span>
+                <span><i class="fas fa-store"></i> المبيعات: 0918828227</span>
+                <span><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/LxVVut4CHCrKMgX59" target="_blank" style="color:var(--gold-bright);text-decoration:none;">زليتن - شارع الجملة</a></span>
+            </div>
             <div class="footer-bottom">© 2025 شركة الولاء الطبي - علامة تجارية مسجلة (GLOBAL). تابعة لمجموعة الولاء للتجارة والصناعة والتنمية والاستثمار.</div>
         </div></footer>
     </div>
@@ -604,6 +615,10 @@
         document.addEventListener('touchend',()=>{setTimeout(()=>{dot.style.opacity='0';ring.style.opacity='0'},1500)});
         const pc=document.getElementById('particlesContainer');for(let i=0;i<50;i++){const p=document.createElement('div');p.classList.add('particle');p.style.left=Math.random()*100+'%';p.style.width=p.style.height=(1+Math.random()*3)+'px';p.style.animationDelay=Math.random()*14+'s';p.style.animationDuration=(7+Math.random()*16)+'s';pc.appendChild(p)}
         const bgGradient=document.getElementById('bgGradient');document.addEventListener('mousemove',(e)=>{const x=e.clientX/window.innerWidth,y=e.clientY/window.innerHeight;bgGradient.style.transform=`translate(${x*18}px,${y*18}px)`});
+
+        // تأكيد تحميل جميع الصور
+        console.log('الموقع جاهز - تأكد من وجود الملفات التالية في نفس المجلد:');
+        console.log('lo.jpeg (شعار) | j1.jpeg إلى j10.jpeg (منتجات) | j11.jpeg (صورة عريضة)');
     </script>
 </body>
 </html>
