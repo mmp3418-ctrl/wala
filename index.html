@@ -31,6 +31,8 @@
             --text-medium: #5c3a3f;
             --text-muted: #8c6a6f;
             --text-light: #b89a9e;
+            --gold-accent: #c8963e;
+            --gold-light: #e0c080;
             --glass-bg: rgba(255,255,255,0.5);
             --glass-border: rgba(184,29,36,0.12);
             --glass-bg-strong: rgba(255,255,255,0.7);
@@ -70,7 +72,6 @@
             position: fixed; pointer-events: none; z-index: 99999;
             transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
             box-shadow: 0 0 20px rgba(184,29,36,0.6), 0 0 40px rgba(184,29,36,0.3);
-            mix-blend-mode: normal;
         }
         .cursor-ring {
             width: 40px; height: 40px;
@@ -289,6 +290,45 @@
         .about-text { font-size:1rem; color:var(--text-medium); line-height:2.1; }
         .about-text strong { color:var(--text-dark); font-weight:700; }
 
+        /* ==================== FEATURED GROUP BOX ==================== */
+        .group-featured-box {
+            max-width:820px; margin:1.8rem auto 0;
+            background:linear-gradient(135deg, rgba(184,29,36,0.03) 0%, rgba(200,150,62,0.06) 100%);
+            border:2px solid var(--gold-accent);
+            border-radius:var(--radius-lg);
+            padding:1.5rem 2rem; text-align:center;
+            position:relative; overflow:hidden;
+            box-shadow:0 6px 25px rgba(200,150,62,0.1);
+        }
+        .group-featured-box::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg, transparent, var(--gold-accent), var(--gold-light), var(--gold-accent), transparent);
+        }
+        .group-featured-box .group-icon {
+            font-size:2rem; color:var(--gold-accent); margin-bottom:0.6rem;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        @keyframes floatIcon {
+            0%,100% { transform:translateY(0); }
+            50% { transform:translateY(-8px); }
+        }
+        .group-featured-box .group-text {
+            font-size:1.15rem; font-weight:700; color:var(--text-dark); line-height:1.9;
+        }
+        .group-featured-box .group-text .highlight {
+            color:var(--vivid-red); font-size:1.25rem; font-weight:800;
+            background:rgba(184,29,36,0.06); padding:4px 14px;
+            border-radius:var(--radius-full); display:inline-block; margin:0 4px;
+        }
+        .group-featured-box .group-text .gold-highlight {
+            color:var(--gold-accent); font-weight:800; font-size:1.2rem;
+        }
+        .group-featured-box .group-text .name-highlight {
+            background:linear-gradient(135deg, var(--vivid-red), var(--gold-accent));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            font-weight:900; font-size:1.3rem; display:inline-block;
+        }
+
         /* ==================== PRODUCTS GRID ==================== */
         .prod-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(165px,1fr)); gap:1.4rem; max-width:1020px; margin:0 auto; }
         .prod-card {
@@ -391,6 +431,8 @@
             .section { padding:55px 0; }
             .hero { padding:120px 0 45px; min-height:auto; }
             .prod-grid { grid-template-columns:repeat(2,1fr); gap:1rem; }
+            .group-featured-box { padding:1.2rem 1.5rem; }
+            .group-featured-box .group-text { font-size:1rem; }
         }
         @media(max-width:480px) {
             .hero-content h1 { font-size:1.9rem; }
@@ -479,13 +521,24 @@
                             <div class="about-text">
                                 <p>
                                     <strong>شركة الولاء الطبي</strong> هي شركة ليبية متخصصة في
-                                    <strong>إستيراد المستلزمات الطبية ولوازم الأم والطفل</strong>،
-                                    تتبع <strong>شركة قابضة</strong> متخصصة في التجارة العامة.
+                                    <strong>إستيراد المستلزمات الطبية ولوازم الأم والطفل</strong>.
                                     نلتزم بتوفير منتجات صحية عالية الجودة من أفضل الماركات العالمية.
                                     <strong>رسالتنا</strong> هي المساهمة في تحسين الرعاية الصحية،
                                     و<strong>رؤيتنا</strong> أن نكون الشريك الأول للمستشفيات والعيادات والصيدليات في ليبيا.
                                 </p>
                             </div>
+                        </div>
+
+                        <!-- ==================== GROUP FEATURED BOX ==================== -->
+                        <div class="group-featured-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="group-icon"><i class="fas fa-building"></i></div>
+                            <p class="group-text">
+                                <span class="highlight">شركة الولاء الطبي</span><br>
+                                <span style="font-weight:600;">وهي تابعة لـ</span><br>
+                                <span class="gold-highlight">مجموعة الولاء للتجارة والصناعة والتنمية والاستثمار</span><br>
+                                <span style="font-size:0.95rem; color:var(--text-medium);">بإدارة</span><br>
+                                <span class="name-highlight">عيسى محمد عيسى والي</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -568,7 +621,7 @@
                     <span><i class="fas fa-bullhorn"></i> الإعلام: 0922992989</span>
                     <span><i class="fas fa-store"></i> المبيعات: 0918828227</span>
                 </div>
-                <div class="footer-bottom">© 2025 شركة الولاء الطبي - علامة تجارية مسجلة (GLOBAL). تتبع شركة قابضة.</div>
+                <div class="footer-bottom">© 2025 شركة الولاء الطبي - علامة تجارية مسجلة (GLOBAL). تابعة لمجموعة الولاء للتجارة والصناعة والتنمية والاستثمار.</div>
             </div>
         </footer>
     </div>
@@ -597,7 +650,6 @@
         }
         btt.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // CURSOR
         const dot = document.getElementById('cursorDot'), ring = document.getElementById('cursorRing');
         let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
         document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; dot.style.left = mouseX - 5 + 'px'; dot.style.top = mouseY - 5 + 'px'; });
@@ -610,11 +662,9 @@
         document.addEventListener('touchmove', (e) => { const t = e.touches[0]; mouseX = t.clientX; mouseY = t.clientY; dot.style.left = mouseX - 4 + 'px'; dot.style.top = mouseY - 4 + 'px'; ring.style.left = mouseX - 15 + 'px'; ring.style.top = mouseY - 15 + 'px'; dot.style.opacity = '1'; ring.style.opacity = '1'; });
         document.addEventListener('touchend', () => { setTimeout(() => { dot.style.opacity = '0'; ring.style.opacity = '0'; }, 1500); });
 
-        // PARTICLES
         const pc = document.getElementById('particlesContainer');
         for (let i = 0; i < 50; i++) { const p = document.createElement('div'); p.classList.add('particle'); p.style.left = Math.random() * 100 + '%'; p.style.width = p.style.height = (1 + Math.random() * 3) + 'px'; p.style.animationDelay = Math.random() * 14 + 's'; p.style.animationDuration = (7 + Math.random() * 16) + 's'; pc.appendChild(p); }
 
-        // PARALLAX
         const bgGradient = document.getElementById('bgGradient');
         document.addEventListener('mousemove', (e) => { const x = e.clientX / window.innerWidth, y = e.clientY / window.innerHeight; bgGradient.style.transform = `translate(${x * 18}px, ${y * 18}px)`; });
     </script>
